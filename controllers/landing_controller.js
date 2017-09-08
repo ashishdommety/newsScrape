@@ -8,8 +8,20 @@ module.exports = function(app) {
       }
       // Or send the data to the browser
       else {
-        console.log(data);
-        res.render("../views/index", {article:data});
+        if(data.length){
+          console.log(`data: ${data}`);
+          res.render("../views/index", {article:data});
+        } else{
+          let noData = [
+            {
+              link:'/',
+              headline: "Oops! Looks like there are no articles in the Database.",
+              summary: "Hit the scrape button to add articles"
+            }
+          ];
+          console.log(noData);
+          res.render("../views/index", {article: noData})
+        }
       }
     })
   });
