@@ -8,8 +8,8 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 
 // Requiring our Note and Article models
-var Note = require("./models/Note.js");
-var Article = require("./models/Article.js");
+const Note = require("./models/Note.js");
+const Article = require("./models/Article.js");
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
