@@ -1,0 +1,8 @@
+body{
+  /*background-color: blue;*/
+  text-align: center;
+}
+
+#header{
+  display: inline-block;
+}
