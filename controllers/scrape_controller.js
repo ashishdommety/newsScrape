@@ -4,7 +4,7 @@ const Article = require("../models/Article.js");
 
 module.exports = function(app){
   app.post("/scrape", function(req,res){
-    console.log('entered get');
+    console.log('entered post request');
     let result = {};
     request("https://www.nytimes.com/", function(error, response, html){
       let $ = cheerio.load(html);
@@ -37,8 +37,12 @@ module.exports = function(app){
           });
         }
       });
-      res.send("Scrape completed!");
     });
+    res.send("Scrape Complete");
+  })
 
+  app.post("/unscrape", (req,res)=>{
+    Article.collection.drop();
+    res.send("unscrape Complete");
   })
 };
