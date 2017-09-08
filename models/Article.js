@@ -17,6 +17,10 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
+  saved:{
+    type:Boolean,
+    default:false
+  },
   // This only saves one note's ObjectId, ref refers to the Note model
     //the note key is an array so multiple notes can be added
   note: [{

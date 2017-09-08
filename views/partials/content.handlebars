@@ -1,8 +1,13 @@
 {{#each article}}
 <div class="article">
-  <a href="{{this.link}}" target="_blank">
-    <h3 class="headline">{{this.headline}}</h3>
-  </a>
+  <div class="row">
+    <a href="{{this.link}}" target="_blank">
+      <h3 class="headline">{{this.headline}}</h3>
+    </a>
+  </div>
   <p>{{this.summary}}</p>
+  {{#if this._id}}
+  <button class="save_article_button" data-ref="{{this._id}}" type="button" name="button">Save Article</button>
+  {{/if}}
 </div>
 {{/each}}
