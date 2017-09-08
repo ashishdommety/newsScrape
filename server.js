@@ -24,11 +24,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// app.use(bodyParser.text());
-// app.use(bodyParser.json({
-//   type: "application/vnd.api+json"
-// }));
-mongoose.connect("mongodb://localhost/newscrape");
+//checks if local host exists or not
+mongoose.connect( "mongodb://heroku_zpg02kwj:k0ccb6j41snuqro6vn48hjqheg@ds127564.mlab.com:27564/heroku_zpg02kwj" || "mongodb://localhost/newscrape");
 var db = mongoose.connection;
 
 // Show any mongoose errors
