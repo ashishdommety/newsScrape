@@ -5,9 +5,6 @@ const Schema = mongoose.Schema;
 
 // Creating the Note schema
 const NoteSchema = new Schema({
-  // _id:{
-  //   type:String
-  // },
   body: {
     type: String
   }

@@ -10,6 +10,7 @@ module.exports = function(app) {
     var newNote = new Note({
       body: req.body.noteData
     });
+
     console.log(`new note: ${newNote}`);
 
     newNote.save(function(error, doc) {
@@ -74,11 +75,12 @@ module.exports = function(app) {
   })
 
   // Route to see what user looks like WITH populating
-  app.get("/populatedArticles", function(req, res) {
+  app.get("/populatedArticles/:articleid", function(req, res) {
+    console.log(`the article id is: ${req.params.articleid}`);
   //find all users
-    Article.find({})
+    Article.findOne({_id:req.params.articleid})
     // populate the notes (replace the objectIds in the notes array with bona-fide notes)
-      .populate("notes")
+      .populate("note")
       // Now, execute that query
       .exec(function(error, doc) {
         // Send any errors to the browser
