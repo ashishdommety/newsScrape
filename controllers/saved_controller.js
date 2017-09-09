@@ -7,7 +7,8 @@ module.exports = function(app) {
         res.send(error);
       }else {
         if(data.length){
-          res.json(data);
+          res.render("../views/index", {article:data});
+          // res.json(data);
         }else {
           let noData = [
               {
@@ -23,5 +24,13 @@ module.exports = function(app) {
     console.log(`entered saved data`);
     // res.send("saved data here");
   });
+
+  app.post("/articles/:id", (req,res)=>{
+    console.log(`id: ${req.params.id}
+      -----------------------`);
+      Article.update({_id:req.params.id},{saved:true}, {multi:false}, (data)=>{
+        console.log(`successfully saved article!`);
+      })
+  })
 
 };

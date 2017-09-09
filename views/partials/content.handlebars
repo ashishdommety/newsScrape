@@ -6,8 +6,8 @@
     </a>
   </div>
   <p>{{this.summary}}</p>
-  {{#if this._id}}
+  {{#unless this.saved}}
   <button class="save_article_button" data-ref="{{this._id}}" type="button" name="button">Save Article</button>
-  {{/if}}
+  {{/unless}}
 </div>
 {{/each}}
