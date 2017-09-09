@@ -26,10 +26,15 @@ module.exports = function(app) {
   });
 
   app.post("/articles/:id", (req,res)=>{
+    console.log(`save value ${req.body.saveValue}`);
     console.log(`id: ${req.params.id}
       -----------------------`);
-      Article.update({_id:req.params.id},{saved:true}, {multi:false}, (data)=>{
-        console.log(`successfully saved article!`);
+      Article.update({_id:req.params.id},{saved:req.body.saveValue}, {multi:false}, (data)=>{
+        if(req.body.saveValue){
+          console.log(`successfully saved article!`);
+        } else{
+          console.log("successfully deleted article from saved list");
+        }
       })
   })
 
