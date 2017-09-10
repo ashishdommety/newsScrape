@@ -4,12 +4,9 @@ A) try re-rendering the index page - didn't work
 
 
 2) why are all notes pushing to different articles?
-A)
-
-
-3) why cant i see my collections in robo3t?
-A)
-
+A)fixed!
+This was being caused because the string of the _id didn't have a key and
+wasn't being treated like an object. 
 
 work left:
 1) add delete functionality to notes

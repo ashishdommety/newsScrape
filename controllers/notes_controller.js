@@ -25,7 +25,7 @@ module.exports = function(app) {
         console.log(`doc: ${doc}`);
         console.log(`re-checking article id: ${req.body.articleId}`);
         // Find our article and push the new note id into the article's notes array
-        Article.findOneAndUpdate(req.body.articleId, {
+        Article.findOneAndUpdate({_id:req.body.articleId}, {
             $push: {
               note: doc._id
             }
@@ -44,7 +44,7 @@ module.exports = function(app) {
               res.send("Sent data");
               console.log(`************************************************************
 
-              newdoc: ${newdoc}`)
+              newdocId: ${newdoc._id}`)
               // res.send(newdoc);
             }
           });

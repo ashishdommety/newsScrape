@@ -3,6 +3,7 @@ $(document).ready(function() {
 
     if ($(this).hasClass("add_note_button")) {
       var articleId = $(this).data("ref");
+      localStorage.setItem("articleNoteClicked", articleId);
       console.log("clicked add note");
       var data = "<div class='notes'>" +
         "<h3 data-idNum=" + articleId + ">Article notes</h3>" +
@@ -32,13 +33,15 @@ $(document).ready(function() {
       var noteData = $(this).parent().children(".note_data").val().trim();
       var articleId = $(this).parent().children("h3").attr("data-idNum");
       console.log(noteData);
-      console.log(articleId);
+      console.log("article id is: " + articleId);
+      localStorage.setItem("articleNoteSubmitted", articleId);
       $.post("/submitNote", {
           noteData: noteData,
           articleId: articleId
         })
         .done(function(data) {
-          console.log("article saved in db!");
+          console.log("data:",data);
+          // console.log("article saved in db!");
           setTimeout(function(){
             location.reload();
           }, 10);

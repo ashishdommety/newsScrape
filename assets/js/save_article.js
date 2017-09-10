@@ -2,6 +2,7 @@ $(document).ready(function(){
   $(document).on("click", ".save_article_button, .delete_article_button",function(){
     var articleId = $(this).data("ref");
     console.log($(this).data("ref"));
+    localStorage.setItem("articleSaved", articleId);
 
     if($(this).hasClass("delete_article_button")){
       console.log("kaboom! this was deleted");
