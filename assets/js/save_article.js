@@ -6,6 +6,7 @@ $(document).ready(function(){
     if($(this).hasClass("delete_article_button")){
       console.log("kaboom! this was deleted");
       postSaved(false);
+      // window.location.href = "/";
     } else if($(this).hasClass("save_article_button")){
       console.log("hooray! this was saved");
       postSaved(true);

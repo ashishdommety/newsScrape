@@ -9,7 +9,7 @@ module.exports = function(app) {
       // Or send the data to the browser
       else {
         if(data.length){
-          console.log(`data: ${data}`);
+          // console.log(`data: ${data}`);
           res.render("../views/index", {article:data});
         } else{
           let noData = [
@@ -19,7 +19,7 @@ module.exports = function(app) {
               summary: "Hit the scrape button to add articles"
             }
           ];
-          console.log(noData);
+          // console.log(noData);
           res.render("../views/index", {article: noData})
         }
       }

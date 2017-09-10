@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //checks if local host exists or not
-mongoose.connect( "mongodb://heroku_zpg02kwj:k0ccb6j41snuqro6vn48hjqheg@ds127564.mlab.com:27564/heroku_zpg02kwj" || "mongodb://localhost/newscrape");
+mongoose.connect("mongodb://localhost/newscrape" || "mongodb://heroku_zpg02kwj:k0ccb6j41snuqro6vn48hjqheg@ds127564.mlab.com:27564/heroku_zpg02kwj");
 var db = mongoose.connection;
 
 // Show any mongoose errors

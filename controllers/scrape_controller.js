@@ -1,10 +1,11 @@
 const request = require("request");
 const cheerio = require("cheerio");
 const Article = require("../models/Article.js");
+const Note = require("../models/Note.js");
 
 module.exports = function(app){
   app.post("/scrape", function(req,res){
-    console.log('entered post request');
+    // console.log('entered post request');
     let result = {};
     request("https://www.nytimes.com/", function(error, response, html){
       let $ = cheerio.load(html);
@@ -15,10 +16,6 @@ module.exports = function(app){
         let summary = $(element).children("p").text();
 
         if(headline){
-          console.log(`headline: ${headline}
-                      link: ${link}
-                      summary: ${summary}`);
-          console.log("---------------------------------");
           result.headline = headline;
           result.summary = summary;
           result.link = link;
@@ -32,17 +29,23 @@ module.exports = function(app){
             }
             // Or log the doc
             else {
-              console.log(doc);
+              // console.log(doc);
             }
           });
         }
       });
+      console.log('successfully saved');
+      // res.redirect("/");
+      // var noData = {};
+      // res.render("../views/index", {article: noData})
     });
-    res.send("Scrape Complete");
-  })
+  });
 
   app.post("/unscrape", (req,res)=>{
     Article.collection.drop();
-    res.send("unscrape Complete");
-  })
+    Note.collection.drop();
+    // res.redirect("/");
+    var noData = {};
+    // res.render("../views/index", {article: noData})
+  });
 };

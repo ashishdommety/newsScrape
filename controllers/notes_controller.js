@@ -23,6 +23,7 @@ module.exports = function(app) {
       else {
         console.log(`no error, new note saved successfully`);
         console.log(`doc: ${doc}`);
+        console.log(`re-checking article id: ${req.body.articleId}`);
         // Find our article and push the new note id into the article's notes array
         Article.findOneAndUpdate(req.body.articleId, {
             $push: {
@@ -40,6 +41,7 @@ module.exports = function(app) {
             // Or send the newdoc to the browser
             else {
               // newdoc.note
+              res.send("Sent data");
               console.log(`************************************************************
 
               newdoc: ${newdoc}`)
