@@ -17,6 +17,9 @@ $(document).ready(function(){
       $.post("/articles/" + articleId,{saveValue: bool})
         .done(function(data){
           console.log("article saved in db!");
+          setTimeout(function(){
+            location.reload();
+          }, 10);
         });
     }
   });

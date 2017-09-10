@@ -9,13 +9,21 @@ $(document).ready(function() {
       $("#content").empty();
       $.post("/scrape", {})
         .done(function(data) {
-          console.log("post to scrape data successfully sent!");
+          console.log("post to scrape data successfully sent! Timer activated");
+          // $("#content").text("loading...");
+          setTimeout(function(){
+            // $("#content").empty();
+            location.reload();
+          }, 10);
         });
     } else if (buttonId === "unscrape_button") {
       console.log("unscrape button clicked");
       $.post("/unscrape", {})
         .done(function(data) {
           console.log("post to unscrape data successfully sent!");
+          setTimeout(function(){
+            location.reload();
+          }, 10);
         });
     }
 

@@ -39,6 +39,9 @@ $(document).ready(function() {
         })
         .done(function(data) {
           console.log("article saved in db!");
+          setTimeout(function(){
+            location.reload();
+          }, 10);
         });
       // 59b33489f5cd7f21881244b5
     }

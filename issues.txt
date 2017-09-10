@@ -1,5 +1,6 @@
 1) why doesn't res.redirect() work?
-A) try re-rendering the index page
+A) try re-rendering the index page - didn't work
+- solved this issue temporarily with timers.
 
 
 2) why are all notes pushing to different articles?

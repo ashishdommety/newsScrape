@@ -35,7 +35,7 @@ module.exports = function(app){
         }
       });
       console.log('successfully saved');
-      // res.redirect("/");
+      res.redirect("/");
       // var noData = {};
       // res.render("../views/index", {article: noData})
     });
@@ -44,8 +44,8 @@ module.exports = function(app){
   app.post("/unscrape", (req,res)=>{
     Article.collection.drop();
     Note.collection.drop();
-    // res.redirect("/");
-    var noData = {};
+    res.redirect("/");
+    // var noData = {};
     // res.render("../views/index", {article: noData})
   });
 };
