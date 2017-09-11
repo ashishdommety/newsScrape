@@ -14,7 +14,7 @@ $(document).ready(function() {
           setTimeout(function(){
             // $("#content").empty();
             location.reload();
-          }, 10);
+          }, 100);
         });
     } else if (buttonId === "unscrape_button") {
       console.log("unscrape button clicked");

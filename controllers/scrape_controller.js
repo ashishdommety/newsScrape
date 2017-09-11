@@ -6,9 +6,11 @@ const Note = require("../models/Note.js");
 module.exports = function(app){
   app.post("/scrape", function(req,res){
     // console.log('entered post request');
+
     let result = {};
     request("https://www.nytimes.com/", function(error, response, html){
       let $ = cheerio.load(html);
+
       $("article.story.theme-summary").each(function(i, element) {
 
         let headline = $(element).children("h2").children("a").text();

@@ -41,11 +41,12 @@ module.exports = function(app) {
             // Or send the newdoc to the browser
             else {
               // newdoc.note
-              res.send("Sent data");
+              res.status(200).send("Sent data");
               console.log(`************************************************************
 
               newdocId: ${newdoc._id}`)
               // res.send(newdoc);
+              // res.status(200).send({message:"submitted note!"});
             }
           });
       }
@@ -94,5 +95,16 @@ module.exports = function(app) {
           res.json(doc);
         }
       });
+  });
+
+  app.post("/deleteNote", function(req,res){
+    console.log(`the note id is ${req.body.noteId}`);
+    Note.findByIdAndRemove({_id:req.body.noteId}, (err,note) =>{
+      let response = {
+        message:"Successfully deleted note",
+        id: note._id
+      };
+      res.status(200).send(response);
+    });
   });
 }
