@@ -13,9 +13,9 @@ module.exports = function(app){
 
       $("article.story.theme-summary").each(function(i, element) {
 
-        let headline = $(element).children("h2").children("a").text();
+        let headline = $(element).children("h2").children("a").text().trim();
         let link = $(element).children("h2").children("a").attr("href");
-        let summary = $(element).children("p").text();
+        let summary = $(element).children("p.summary").text().trim();
 
         if(headline){
           result.headline = headline;
