@@ -7,14 +7,14 @@
   </div>
   <p>{{this.summary}}</p>
   {{#unless this.saved}}
-  <hr>
-  <button class="save_article_button" data-ref="{{this._id}}" type="button" name="button">Save Article</button>
+  {{!-- <hr> --}}
+  <button class="save_article_button hvr-grow" data-ref="{{this._id}}" type="button" name="button">Save Article</button>
   {{/unless}}
   {{#if this.saved}}
   <hr>
-  <p>You have already saved this article</p>
-  <button class="delete_article_button" data-ref="{{this._id}}" type="button" name="button">Delete From Saved</button>
-  <button class="add_note_button" data-ref="{{this._id}}" type="button" name="button">Add Note</button>
+  <p><em>You have already saved this article</em></p>
+  <button class="delete_article_button hvr-grow" data-ref="{{this._id}}" type="button" name="button">Delete From Saved</button>
+  <button class="add_note_button hvr-grow" data-ref="{{this._id}}" type="button" name="button">Add Note</button>
   {{/if}}
 </div>
 {{/each}}

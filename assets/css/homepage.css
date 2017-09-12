@@ -1,6 +1,8 @@
 body{
-  /*background-color: blue;*/
+  /*background-color: #f4c095;*/
+  background-color: #78D173;
   text-align: center;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 #header{
@@ -8,5 +10,71 @@ body{
 }
 
 .article{
-  border: 1px solid black;
+  border: 2px solid #1d7874;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #a8ddd2;
+}
+
+.scrape_buttons, .save_article_button, .add_note_button,
+.delete_article_button, .note_button, .delete_note{
+  background-color: #1d7874;
+  border:none;
+  padding:10px;
+  border-radius: 10px;
+  color:white;
+  margin:10px;
+}
+
+.delete_article_button, .delete_note{
+  background-color: #ee2e31;
+}
+
+.delete_note{
+  padding: 5px;
+  border-radius: 5px;
+}
+/*.save_article_button{
+  background-color: #679289;
+  border:none;
+  padding:10px;
+  border-radius: 10px;
+  color:white;
+  margin:10px;
+}*/
+
+.links{
+  font-size: 20px;
+  color:white;
+  margin: 20px;
+}
+.links:hover{
+  color:#86e88d;
+  text-decoration: none;
+}
+
+#top_stuff{
+  background-color: #45b74d;
+  padding-bottom: 20px;
+}
+
+#news_icon{
+  width:15%;
+  height:15%;
+  /*opacity: 0.4;*/
+}
+hr{
+  display: block;
+  height: 0px;
+  border: 1px solid #1d7874;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.headline{
+  color:#1d7874;
+}
+
+#title{
+  font-family: 'Cinzel', serif;
 }

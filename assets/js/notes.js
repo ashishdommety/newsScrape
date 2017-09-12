@@ -13,7 +13,7 @@ $(document).ready(function() {
         "<textarea class='note_data' rows='4' cols='50'> " +
         "</textarea>" +
         "<hr>" +
-        "<button type='submit' class='note_button'>Submit</button>" +
+        "<button type='submit' class='note_button hvr-grow'>Submit</button>" +
         "</div>";
 
       bootbox.dialog({
@@ -28,7 +28,7 @@ $(document).ready(function() {
             // console.log("notes number" + i + ": " + notes[i].body);
             $("#notes_for_" + articleId).append("<p>" +
             notes[i].body +
-            "<button class='delete_note' data-ref="+
+            "<button class='delete_note hvr-grow' data-ref="+
             notes[i]._id+
             "> X </button></p>")
           }
